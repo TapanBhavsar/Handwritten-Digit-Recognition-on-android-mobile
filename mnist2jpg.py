@@ -57,14 +57,14 @@ if not os.path.isdir("test-images"):
    os.makedirs("test-images")
 
 # process train data
-with open("train-labels.csv", 'wb') as csvFile:
+with open("train-labels.csv", 'w') as csvFile:
   writer = csv.writer(csvFile, delimiter=',', quotechar='"')
   for i in range(len(train_data)):
     imsave("train-images/" + str(i) + ".jpg", train_data[i][:,:,0])
     writer.writerow(["train-images/" + str(i) + ".jpg", train_labels[i]])
 
 # repeat for test data
-with open("test-labels.csv", 'wb') as csvFile:
+with open("test-labels.csv", 'w') as csvFile:
   writer = csv.writer(csvFile, delimiter=',', quotechar='"')
   for i in range(len(test_data)):
     imsave("test-images/" + str(i) + ".jpg", test_data[i][:,:,0])
